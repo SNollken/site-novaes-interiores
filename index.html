@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novaes Interiores - Móveis Planejados</title>
     <style>
-        /* Estilos melhorados */
         .category {
             margin: 4rem 0;
             padding: 0 1rem;
@@ -13,50 +12,42 @@
 
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Largura fixa das colunas */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            justify-items: center; /* Centraliza os itens horizontalmente */
+            justify-items: center;
         }
 
-    
-
-    
-        /* Efeito de zoom APENAS na imagem */
-
-
-
         .image-item {
-            width: 100%; /* Ocupa toda a largura da coluna do grid */
-            max-width: 400px; /* Largura máxima opcional */
-            height: 400px; /* Altura fixa para todos os containers */
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
             display: flex;
-            align-items: center; /* Centraliza verticalmente */
-            justify-content: center; /* Centraliza horizontalmente */
-            background: #f8f8f8; /* Cor de fundo para áreas vazias */
+            align-items: center;
+            justify-content: center;
+            background: #f8f8f8;
             border-radius: 15px 15px 5px 5px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             position: relative;
-            overflow: hidden; /* Importante para conter o zoom */
+            overflow: hidden;
             border-radius: 15px 15px 5px 5px;
-            transition: all 0.3s ease; /* Transição suave para o container (opcional) */
+            transition: all 0.3s ease;
         }
     
         .image-item img {
-            width: auto; /* Mantém proporção original */
-            height: auto; /* Mantém proporção original */
-            max-width: 100%; /* Limite máximo de largura */
-            max-height: 100%; /* Limite máximo de altura */
-            object-fit: contain; /* Exibe imagem inteira sem cortar */
-            transition: transform 0.3s ease; /* Transição apenas no zoom da imagem */
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
         }
         .image-item:hover{
-                      box-shadow: 0 0 25px 10px rgba(107, 142, 35, 0.3); /* Sombra em todos os lados */  
+            box-shadow: 0 0 25px 10px rgba(107, 142, 35, 0.3);
         }
 
         .image-item:hover img {
             transform: scale(1.1);
-
         }
 
         h2 {
@@ -74,7 +65,6 @@
             border-left: 4px solid #B6D7A8;
         }
 
-        /* Animações ao scroll */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -86,11 +76,9 @@
     </style>
 </head>
 <body>
-    <!-- Seção Portfólio -->
     <section id="portfolio">
         <h2>Portfólio</h2>
 
-        <!-- Categoria: Cozinha -->
         <div class="category animate-on-scroll">
             <h3>Cozinhas</h3>
             <div class="image-grid">
@@ -112,7 +100,6 @@
             </div>
         </div>
 
-        <!-- Categoria: Quarto -->
         <div class="category animate-on-scroll">
             <h3>Quartos</h3>
             <div class="image-grid">
@@ -131,7 +118,6 @@
             </div>
         </div>
 
-        <!-- Categoria: Sala -->
         <div class="category animate-on-scroll">
             <h3>Salas</h3>
             <div class="image-grid">
@@ -150,7 +136,6 @@
             </div>
         </div>
 
-        <!-- Categoria: Banheiro -->
         <div class="category animate-on-scroll">
             <h3>Banheiros</h3>
             <div class="image-grid">
@@ -161,12 +146,11 @@
                     <img src="/images/portfolio/banheiro-1-1.jpeg" alt="Banheiro">
                 </div>
                 <div class="image-item">
-                    <img src="/images/portfolio/bnheiro-1-2.jpeg" alt="Banheiro">
+                    <img src="/images/portfolio/banheiro-1-2.jpeg" alt="Banheiro">
                 </div>
             </div>
         </div>
 
-        <!-- Categoria: Mesa -->
         <div class="category animate-on-scroll">
             <h3>Mesas</h3>
             <div class="image-grid">
@@ -178,7 +162,6 @@
     </section>
 
     <script>
-        // Animação ao scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
