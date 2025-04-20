@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novaes Interiores - Móveis Planejados</title>
+    <style>
+        .category {
+            margin: 4rem 0;
+            padding: 0 1rem;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem; /* Aumentei o gap para melhor respiração */
+            align-items: start; /* Alinha os itens pelo topo */
+        }
+        
+        .image-item {
+            width: 100%;
+            height: 380px; /* Altura fixa reduzida para melhor proporção */
+            background: #f8f8f8;
+            border-radius: 15px 15px 5px 5px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Preenche o container mantendo proporção (pode cortar bordas) */
+            transition: transform 0.4s ease;
+        }
+
+        /* Opcional: Se preferir mostrar imagens inteiras sem corte
+.image-item img {
+    object-fit: contain;
+    padding: 15px; /* Espaço interno para não colar nas bordas 
+} */
+        
+        /* Efeito hover refinado */
+        .image-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(107, 142, 35, 0.25);
+        }
+        
+        .image-item:hover img {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #8A9A5B;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            color: #6B8E23;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid #B6D7A8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <section id="portfolio">
+        <h2>Portfólio</h2>
+
+        <div class="category animate-on-scroll">
+            <h3>Cozinhas</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/images/portfolio/cozinha-1-1.jpeg" alt="Cozinha">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/cozinha-1-2.jpeg" alt="Cozinha">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/cozinha-2-1.jpeg" alt="Cozinha">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/cozinha-2-2.jpeg" alt="Cozinha">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/cozinha-2-3.jpeg" alt="Cozinha">
+                </div>
+            </div>
+        </div>
+
+        <div class="category animate-on-scroll">
+            <h3>Quartos</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/images/portfolio/quarto-0.jpeg" alt="Quarto">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/quarto-01.jpeg" alt="Quarto">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/quarto-1-1.jpeg" alt="Quarto">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/quarto-1-2.jpeg" alt="Quarto">
+                </div>
+            </div>
+        </div>
+
+        <div class="category animate-on-scroll">
+            <h3>Salas</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/images/portfolio/sala-0.jpeg" alt="Sala">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/sala-1-1.jpeg" alt="Sala">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/sala-1-2.jpeg" alt="Sala">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/sala-2-1.jpeg" alt="Sala">
+                </div>
+            </div>
+        </div>
+
+        <div class="category animate-on-scroll">
+            <h3>Banheiros</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/images/portfolio/banheiro-0.jpeg" alt="Banheiro">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/banheiro-1-1.jpeg" alt="Banheiro">
+                </div>
+                <div class="image-item">
+                    <img src="/images/portfolio/banheiro-1-2.jpeg" alt="Banheiro">
+                </div>
+            </div>
+        </div>
+
+        <div class="category animate-on-scroll">
+            <h3>Mesas</h3>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="/images/portfolio/mesa-0.jpeg" alt="Mesa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.category').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
